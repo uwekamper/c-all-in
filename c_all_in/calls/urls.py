@@ -17,5 +17,5 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^announce/', views.announce),
+    url(r'^announce/record.py$', views.announce),
 ]
