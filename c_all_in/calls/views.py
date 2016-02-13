@@ -9,7 +9,7 @@ from .forms import AnnounceForm
 
 def handle_announcement(f):
     upload_dir = os.path.join(settings.MEDIA_ROOT, 'announcements')
-    if not os.path.exists():
+    if not os.path.exists(upload):
         os.makedirs(upload_dir)
     save_to = os.path.join(settings.MEDIA_ROOT, 'announcements/{}'.format(f.name))
 
