@@ -8,8 +8,11 @@ from .forms import AnnounceForm
 # Create your views here.
 
 def handle_announcement(f):
-    os.makedirs(os.path.join(settings.MEDIA_ROOT, 'announcements'))
+    upload_dir = os.path.join(settings.MEDIA_ROOT, 'announcements')
+    if not os.path.exists():
+        os.makedirs(upload_dir)
     save_to = os.path.join(settings.MEDIA_ROOT, 'announcements/{}'.format(f.name))
+
     with open(save_to, 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
