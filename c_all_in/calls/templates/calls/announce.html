@@ -5,5 +5,9 @@
   {% else %}
   <h2>Kein Titel da</h2>
   {% endif %}
+
+  {% if form %}
+    {{ form.as_p }}
+  {% endif %}
 </body>
 </html>
