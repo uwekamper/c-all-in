@@ -1,9 +1,19 @@
+import os
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 
 from .forms import AnnounceForm
 # Create your views here.
+
+def handle_announcement(f):
+    os.makedirs(os.path.join(settings.MEDIA_ROOT, 'announcements'))
+    save_to = os.path.join(settings.MEDIA_ROOT, 'announcements/{}'.format(f.name))
+    with open(save_to, 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+
 
 @csrf_exempt
 def announce(request):
@@ -11,6 +21,7 @@ def announce(request):
         form = AnnounceForm(request.POST, request.FILES)
         if form.is_valid():
             print(u'Cleaned data: {}'.format(form.cleaned_data))
+            handle_announcement(request.FILES['filename'])
             return render(request, 'calls/announce.html', {'title': 'Thank you'})
         else:
             response = render(request, 'calls/announce.html',
