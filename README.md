@@ -14,3 +14,6 @@ Prerequisites: Install Python3 and virtualenvwrapper
 5.  Run database migrations: `cd c_all_in ; ./manage.py migrate`
 6.  Run the development server: `cd c_all_in ; ./manage.py runserver`
 7.  Open up in Webbrowser: http://localhost:8000/
+
+------
+Copyright (c) 2016 by Ansgar Schmidt, Uwe Kamper 
