@@ -21,4 +21,5 @@ from calls import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^calls/', include('calls.urls')),
+    url(r'^$', views.index)
 ]

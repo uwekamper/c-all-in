@@ -17,5 +17,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^announce/', views.announce),
+    url(r'^announce/', views.receive_announcement, name='receive_announcement'),
+    url(r'^callmenu.py', views.callmenu, name='callmenu'),
+
 ]

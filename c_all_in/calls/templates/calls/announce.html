@@ -1,13 +1,15 @@
-<html>
-<body>
+{% extends "calls/base.html" %}
+
+{% block title %}{% endblock title %}
+
+{% block body %}
   {% if title %}
   <h1>{{ title }}</h1>
   {% else %}
-  <h2>Kein Titel da</h2>
+  <h2>No Title Present</h2>
   {% endif %}
 
   {% if form %}
     {{ form.as_p }}
   {% endif %}
-</body>
-</html>
+{% endblock body %}
