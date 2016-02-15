@@ -1,7 +1,10 @@
 # c-all-in
 
 Call our announcement service and leave a message. This will later be played back using a 
-public announcement (PA) system.
+public announcement (PA) system. If you want to create a call-recording service using Tropo's 
+scripting API and Django, this repo might server as a good starting point. 
+
+Uses Django 1.9 and Python 3.
 
 # How to set up for development
 
